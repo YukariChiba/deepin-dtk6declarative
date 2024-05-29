@@ -927,6 +927,7 @@ void DQuickWindowAttached::setAlphaBufferSize(int size)
 
     QQuickWindow *w = window();
     QSurfaceFormat fmt = w->requestedFormat();
+    fmt.setRenderableType(QSurfaceFormat::RenderableType::OpenGLES);
     fmt.setAlphaBufferSize(size);
     w->setFormat(fmt);
     Q_EMIT alphaBufferSizeChanged();
